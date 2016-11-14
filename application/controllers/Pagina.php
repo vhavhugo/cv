@@ -5,10 +5,14 @@ class Pagina extends CI_Controller {
 
     function __construct(){
         parent::__construct();
+        $this->load->helper('url');
+
     }
 
     public function index()
     {
-        $this->load->view('home');
+        $dados['titulo'] = "CV";
+        $this->load->view('home', $dados);
     }
+
 }

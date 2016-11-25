@@ -8,6 +8,7 @@ class Configuracao extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('configuracao_model','configuracao');
+        $this->load->helper('url');
 
     }
     
@@ -27,4 +28,47 @@ class Configuracao extends CI_Controller {
 		
         endif;
     }
+    
+        
+    public function create()
+    {
+        $id = $this->uri->segment(3);
+         $data = array(
+            'config_nome' => $this->input->post('config_nome'),
+            'config_data' => $this->input->post('config_data'),
+            'config_endereco' => $this->input->post('config_endereco'),
+            'config_tel' => $this->input->post('config_tel'),
+            'config_tel2' => $this->input->post('config_tel2'),
+            'config_email' => $this->input->post('config_email'),
+            'config_email2' => $this->input->post('config_email2'),
+            'config_site' => $this->input->post('config_site'),
+            'config_descricao' => $this->input->post('config_descricao')
+        );
+            $this->db->where('config_id', $id);
+            
+            $this->configuracao->gravar($data);
+            
+            redirect( base_url() . 'configuracao/editar/1');
+    }
+    
+    //     public function create()
+    // {
+    //     $id = $this->uri->segment(3);
+
+    //     $data = array(
+    //         'config_nome' => $this->input->post('config_nome'),
+    //         'config_data' => $this->input->post('config_data'),
+    //         'config_endereco' => $this->input->post('config_endereco'),
+    //         'config_tel' => $this->input->post('config_tel'),
+    //         'config_tel2' => $this->input->post('config_tel2'),
+    //         'config_email' => $this->input->post('config_email'),
+    //         'config_email2' => $this->input->post('config_email2'),
+    //         'config_site' => $this->input->post('config_site'),
+    //         'config_descricao' => $this->input->post('config_descricao'),
+    //     );
+    //     print_r($data);exit;
+    //     $this->configuracao->gravar();
+     
+    //     redirect( base_url() . 'configuracao/editar/1');
+    // }
 }

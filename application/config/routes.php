@@ -52,3 +52,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'pagina';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+//Front-End
+$route['sobre'] = 'pagina/sobre';
+$route['portfolios'] = 'pagina/portfolios';
+$route['blog'] = 'pagina/blog';
+$route['post'] = 'pagina/post/';
+$route['post/(:num)'] = 'pagina/post/$1';
+$route['contato'] = 'pagina/contato';
+//$route['post'/(:num)] = 'pagina/post/$1';
+//Back-End
+$route['login'] = 'setup';
+$route['painel'] = 'setup';
+$route['dashboard'] = 'dashboard';
+$route['config'] = 'config';
+$route['posts'] = 'blog';
+$route['post-editar'] = 'blog-editar';
+$route['cadastrar-categoria-blog'] = 'catblog/create';
+$route['lista-categorias-blog'] = 'catblog';
+
+$route['news'] = 'news';
+$route['news/create'] = 'news/create';
+ 
+$route['news/edit/(:any)'] = 'news/edit/$1';
+ 
+$route['news/view/(:any)'] = 'news/view/$1';
+$route['news/(:any)'] = 'news/view/$1';
+
+
+$route['base'] = 'Base';
+ 
+$route['upload'] = 'Base/Upload';
+$route['download/(:any)/(:any)'] = 'Base/Download/$1/$2';
+

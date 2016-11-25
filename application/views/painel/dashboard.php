@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
 
     <!-- Page title -->
-    <title>LUNA | Responsive Admin Theme</title>
+    <title><?php echo $titulo ?></title>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="<?php echo base_url('assets_painel/vendor/fontawesome/css/font-awesome.css'); ?>"/>
@@ -48,7 +48,9 @@
                             <p class="small">
                                 <span class="c-white">Seja bem vindo: </span>
                                 <?php
-                                    echo ucwords($this->session->userdata('usuario_nome'));
+                                    echo ucwords($this->session->userdata('user_login'));
+                                    echo " | ";
+                                    echo anchor('login/sair', 'Sair', 'title="Efetuar logout"');
                                 ?>
                             </p>
                             <hr/>

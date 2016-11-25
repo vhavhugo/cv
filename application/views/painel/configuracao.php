@@ -49,7 +49,7 @@
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <?php echo validation_errors(); ?>
-                                    <?php echo form_open(''); ?>
+                                    <?php echo form_open('configuracao/create/1'); ?>
                                     <div class="col-md-10 col-sm-10 col-xs-12">
                                         <div class="form-group">
                                             <label for="config_nome">Nome</label> 
@@ -108,7 +108,7 @@
                                     </div>
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                            <label for="config_site">Descricao</label> 
+                                            <label for="config_descricao">Descricao</label> 
                                             <textarea type="textarea" name="config_descricao" class="form-control" id="config_descricao">
                                              <?php echo $configuracao['config_descricao'] ?>
                                              </textarea>

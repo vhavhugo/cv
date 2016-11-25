@@ -8,8 +8,8 @@ class Catblog extends CI_Controller {
         
         $this->load->model('catblog_model','catblog');
         $this->load->helper('url_helper');
-        // $this->load->library('form_validation');
-        // $this->load->library('table');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
         
     }
 
@@ -26,22 +26,6 @@ class Catblog extends CI_Controller {
 		}
         
     }
- 
-    // public function view($url = NULL)
-    // {
-    //     $data['catblog'] = $this->news_model->get_news($url);
-        
-    //     if (empty($data['catblog']))
-    //     {
-    //         show_404();
-    //     }
- 
-    //     $data['catblog_nome'] = $data['catblog_nome']['catblog_nome'];
- 
-    //     $this->load->view('news/header', $data);
-    //     $this->load->view('news/view', $data);
-    //     $this->load->view('news/footer');
-    // }
     
     
     public function create()
@@ -49,44 +33,32 @@ class Catblog extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->form_validation->set_rules('catblog_nome', 'Título', 'required');
-        if ($this->form_validation->run() === FALSE)
-        {
+        if ($this->form_validation->run() === FALSE):
         $data['titulo'] = 'ADMIN - CV';
         $data['h2'] = 'Cadastrar nova categoria do blog';
         $sess = $this->session->userdata("_LOGIN");
-        if(isset($sess)){
-			 $this->load->view('painel/catblog-novo', $data);
-		}else{
-			 $this->load->view('painel');
-		}
-        }else{
+            if(isset($sess)):
+			     $this->load->view('painel/catblog-novo', $data);
+		    else:
+			    $this->load->view('painel');
+		    endif;
+        else:
             $this->catblog->gravar();
             redirect( base_url() . 'catblog');
-        }
+        endif;
     }
     
     public function editar()
     {
         $id = $this->uri->segment(3);
         
-        
-        if (empty($id))
-        {
+        if (empty($id)):
             show_404();
-        }
-        
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-        
+        endif;
         $data['titulo'] = 'ADMIN - CV'; 
         $data['h2'] = 'Editar categoria do blog';
-        
         $data['catblog'] = $this->catblog->get_by_id($id);
-        
-        
         $this->form_validation->set_rules('catblog_nome', 'Título', 'required');
-        
- 
         if ($this->form_validation->run() === FALSE)
         {
             $sess = $this->session->userdata("_LOGIN");
@@ -107,13 +79,9 @@ class Catblog extends CI_Controller {
     {
         $id = $this->uri->segment(3);
         
-        if (empty($id))
-        {
+        if (empty($id)):
             show_404();
-        }
-                
-        // $catblog = $this->catblog->get_by_id($id);
-        
+        endif;
         $this->catblog->delete($id);        
         redirect( base_url() . 'catblog');        
     }

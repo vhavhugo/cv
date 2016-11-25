@@ -39,4 +39,16 @@ if(!function_exists('config_upload')):
         $config['max_size'] = $size;
         return $config;
     }
-    endif;
+endif;
+
+if(!function_exists('to_bd')):
+    function to_bd($string=NULL){
+        return htmlentities($string);
+    }
+endif;
+
+if(!function_exists('to_html')):
+    function to_html($string=NULL){
+        return html_entity_decode($string);
+    }
+endif;

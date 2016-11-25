@@ -37,16 +37,22 @@ class News_model extends CI_Model {
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
  
         $data = array(
-            'title' => $this->input->post('title'),
-            'slug' => $slug,
-            'text' => $this->input->post('text')
+            'config_nome' => $this->input->post('config_nome'),
+            'config_data' => $this->input->post('config_data'),
+            'config_endereco' => $this->input->post('config_endereco'),
+            'config_tel' => $this->input->post('config_tel'),
+            'config_tel2' => $this->input->post('config_tel2'),
+            'config_email' => $this->input->post('config_email'),
+            'config_email2' => $this->input->post('config_email2'),
+            'config_site' => $this->input->post('config_site'),
+            'config_descricao' => $this->input->post('config_descricao')
         );
         
         if ($id == 0) {
-            return $this->db->insert('news', $data);
+            return $this->db->insert('config', $data);
         } else {
             $this->db->where('id', $id);
-            return $this->db->update('news', $data);
+            return $this->db->update('config', $data);
         }
     }
     

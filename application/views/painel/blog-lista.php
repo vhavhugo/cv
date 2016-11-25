@@ -23,10 +23,8 @@
     <link rel="stylesheet" href="<?php echo base_url('assets_painel/styles/style.css'); ?>">
 </head>
 <body>
-
 <!-- Wrapper-->
 <div class="wrapper">
-
     <!-- Header-->
        <?php $this->load->view('painel/header'); ?>
     <!-- End header-->
@@ -60,20 +58,20 @@
                                     <thead>
                                     <tr>
                                         <th>Título</th>
-                                        <th>Sub-Título</th>
                                         <th>Data</th>
                                         <th width=100>Ações</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if(isset($posts) && sizeof($posts) > 0): ?>
-                                        <?php foreach($posts as $linha): ?>
+                                        
+                                        <?php if(isset($dados) && sizeof($dados) > 0): ?>
+                                        
+                                        <?php foreach($dados['blog'] as $linha): ?>
                                     <tr>
-                                        <td class="titulo-blog"><?php echo $linha->titulo; ?></td>
-                                        <td class="subtitulo-blog"><?php echo $linha->subtitulo; ?></td>
-                                        <td class="data-blog"><?php echo $linha->data; ?></td>
+                                        <td class="titulo-blog"><?php echo $linha->blog_titulo; ?></td>
+                                        <td class="data-blog"><?php echo $linha->blog_data; ?></td>
                                         <td>
-                                            <?php echo anchor('blog/editar/'.$linha->blog_id, '<button class="btn btn-default " type="button"><i class="fa fa-paste"></i> Edit</button>'); ?> |
+                                            <?php echo anchor('blog/editar/'.$linha->blog_id, 'Editar'); ?> |
                                             <?php echo anchor('blog/excluir/'.$linha->blog_id, 'Excluir'); ?>
                                         </td>
                                        

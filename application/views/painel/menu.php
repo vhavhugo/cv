@@ -2,48 +2,47 @@
         <nav>
             <ul class="nav luna-nav">
                 <li class="nav-category">
-                    Main
+                    Menu
                 </li>
+                
                 <li>
-                    <a href="<?php echo base_url(); ?>/dashboard/">Dashboard</a>
+                  
+                    <a href="<?php echo base_url(); ?>dashboard/">Dashboard</a>
                 </li>
 
                 <li class="active">
                     <a href="#monitoring" data-toggle="collapse" aria-expanded="false">
-                        Monitoring<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        Páginas<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                     </a>
                     <ul id="monitoring" class="nav nav-second collapse in">
-                        <li><a href="metrics.html"> Metrics</a></li>
-                        <li><a href="usage.html"> Usage</a></li>
+                        <li><a href="<?php echo base_url(); ?>phome/editar/1"> Home</a></li>
+                        <li><a href="<?php echo base_url(); ?>psobre/editar/1"> Sobre</a></li>
+                        <li><a href="<?php echo base_url(); ?>pcontato/editar/1"> Contato</a></li>
                         <li class="active"><a href="activity.html"> Activity</a></li>
                     </ul>
                 </li>
                 <li class="nav-category">
-                    UI Elements
+                    Páginas
                 </li>
                 <li>
                     <a href="#uielements" data-toggle="collapse" aria-expanded="false">
-                        General<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        Blog<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                     </a>
                     <ul id="uielements" class="nav nav-second collapse">
-                        <li><a href="panels.html">Panels</a></li>
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
-                        <li><a href="tabs.html">Tabs</a></li>
-                        <li><a href="modals.html">Modals</a></li>
-                        <li><a href="alerts.html">Alerts</a></li>
-                        <li><a href="gridSystem.html">Grid system</a></li>
-                        <li><a href="draggable.html">Draggable</a></li>
+                        <li><a href="<?php echo base_url(); ?>lista-categorias-blog/">Categoria</a></li>
+                        <li><a href="<?php echo base_url(); ?>posts/">Lista de Posts</a></li>
+                        <li><a href="<?php echo base_url(); ?>post-editar/">Editar Post</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#tables" data-toggle="collapse" aria-expanded="false">
-                        Tables design<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                        Portfólio<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                     </a>
                     <ul id="tables" class="nav nav-second collapse">
-                        <li><a href="tableStyles.html">Table styles</a></li>
-                        <li><a href="dataTables.html">Data Tables</a></li>
+                        <li><a href="<?php echo base_url(); ?>catport/">Lista de Categorias</a></li>
+                        
+                        <li><a href="<?php echo base_url(); ?>portfolio/">Lista de Portfólios</a></li>
+               
                     </ul>
                 </li>
                 <li>
@@ -60,7 +59,7 @@
                 </li>
 
                 <li class="nav-category">
-                    App Pages
+                    Configurações
                 </li>
 
                 <li>
@@ -68,7 +67,8 @@
                         Basic <span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                     </a>
                     <ul id="extras" class="nav nav-second collapse">
-                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="<?php echo base_url(); ?>configuracao/editar/1">Configurações Gerais</a></li>
+                        <li><a href="">Profile</a></li>
                         <li><a href="support.html">Support</a></li>
                         <li><a href="nestableList.html">List</a></li>
                         <li><a href="timeline.html">Timeline</a></li>

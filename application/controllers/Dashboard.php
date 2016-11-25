@@ -5,16 +5,21 @@ class Dashboard extends CI_Controller {
 
     function __construct(){
         parent::__construct();
+
+    }
+    
+    public function index(){
+        $data['titulo'] = 'ADMIN - CV';
+        $data['h2'] = 'Configurações Gerais';
+       
+        $sess = $this->session->userdata("_LOGIN");
+		$data["sess"] = $sess;
+		if(isset($sess)){
+			 $this->load->view('painel/dashboard', $data);
+		}else{
+			 $this->load->view('painel');
+		}
         
     }
-
-    public function index()
-    {
-    
-        $dados['titulo'] = 'CV';
-        $dados['h2'] = 'Setup do sistema';
-        $this->load->view('painel/dashboard', $dados);
-    }
-
     
 }

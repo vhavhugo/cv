@@ -56,11 +56,11 @@
                     //         echo '<div class="msg-box">'.$msg.'</div';
                     // endif;
                     $data = array('class'=>'formlogin', 'id'=>'formlogin');
-                        echo form_open('setup/login/', $data);
-                        $data = array('name'=>'usuario_nome', 'id' => 'usuario_nome','autofocus' => 'autofocus','class' => 'form-control', 'placeholder' => 'Informe seu login');
+                        echo form_open('/login/autentica', $data);
+                        $data = array('name'=>'user_login', 'id' => 'user_login','autofocus' => 'autofocus','class' => 'form-control', 'placeholder' => 'Informe seu login');
                         echo form_input($data);
                         echo '<br/>';
-                        $data = array('name'=>'usuario_senha','id'=>'usuario_senha','class' => 'form-control', 'placeholder' => 'Informe sua senha');
+                        $data = array('name'=>'user_senha','id'=>'user_senha','class' => 'form-control', 'placeholder' => 'Informe sua senha');
                         echo form_password($data);
 
                         echo '<br/>';

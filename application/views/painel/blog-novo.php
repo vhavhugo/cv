@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets_painel/vendor/animate.css/animate.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo base_url('assets_painel/vendor/bootstrap/css/bootstrap.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo base_url('assets_painel/vendor/datatables/datatables.min.css'); ?>"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets_painel/vendor/summernote/summernote.css'); ?>"/>
 
     <!-- App styles -->
     <link rel="stylesheet" href="<?php echo base_url('assets_painel/styles/pe-icons/pe-icon-7-stroke.css'); ?>"/>
@@ -65,13 +66,14 @@
                                echo form_input('blog_subtitulo', set_value('blog_subtitulo'), array('class' => 'form-control'));
                                echo '<br/>';
                                echo form_label('Conteúdo: ', 'blog_descricao');
-                               echo form_textarea('blog_descricao', set_value('blog_desricao'), array('class' => 'form-control'));
+                               echo form_textarea('blog_descricao', to_html(set_value('blog_desricao')), array('class' => 'form-control summernote'));
                                echo '<br/>';
-                            //   echo form_label('Imagem do Post: ', 'blog_imagem');
-                            //   echo form_upload('blog_imagem');
-                                <button class="btn btn-default " type="button"><i class="fa fa-upload"></i> <span class="bold">Upload</span></button>
+                               echo form_label('Imagem do Post: ', 'blog_imagem');
+                               echo form_upload('blog_imagem');
+                                // <button class="btn btn-default " type="button"><i class="fa fa-upload"></i> <span class="bold">Upload</span></button>
                                echo '<br/>';
                                echo form_submit('enviar','Salvar Post', array('class' => 'btn btn-w-md btn-primary btn-block'));
+                              echo form_close();
                                 ?>
                             </div>
 
@@ -95,10 +97,14 @@
 <script src="<?php echo base_url('assets_painel/vendor/jquery/dist/jquery.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets_painel/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets_painel/vendor/datatables/datatables.min.js'); ?>"></script>
-
+<script src="<?php echo base_url('assets_painel/vendor/summernote/summernote.js'); ?>"></script>
 <!-- App scripts -->
 <script src="<?php echo base_url('assets_painel/scripts/luna.js'); ?>"></script>
-
+<script>
+    $('.summernote').summernote({
+        height: 200
+    });
+</script>
 
 <script>
     $(document).ready(function () {

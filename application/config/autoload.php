@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database', 'session','upload');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,8 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array();
+//helper funcoes eu criei para ir acrecentando se necessário novos helpers
+$autoload['helper'] = array('url','funcoes','upload','post','string','download');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +133,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('blogModel','catblog_model' => 'catblog','configuracao_model' => 'configuracao','optionModel');

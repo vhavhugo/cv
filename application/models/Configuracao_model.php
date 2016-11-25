@@ -18,4 +18,18 @@ class Configuracao_model extends CI_Model {
         $query = $this->db->get_where('config', array('config_id' => 1));
         return $query->row_array();
     }
+    
+// function gravar($id = 1) {
+    
+//     $this->db->where('config_id', $id);
+//     return $this->db->update('config',$data);
+// }
+
+       public function gravar($data)
+    {
+
+            return $this->db->update('config', $data);
+
+    }
+    
 }

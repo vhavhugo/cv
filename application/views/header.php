@@ -1,3 +1,13 @@
+<div class="page-loader">
+    <div class="loader">Loading...</div>
+    </div>
+    <!-- Preloader end-->
+    <!-- Show menu-->
+<div class="show-menu-btn">
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
 <!-- Menu-->
 <div class="overlay-menu">
     <div class="menu-table">
@@ -5,7 +15,7 @@
             <ul class="navigation">
                 <li><a href="<?php echo base_url(); ?>">Home</a></li>
                 <li><a href="<?php echo base_url('sobre'); ?>">Sobre Nós</a></li>
-                <li><a href="<?php echo base_url('portfolio'); ?>">Portfólio</a></li>
+                <li><a href="<?php echo base_url('portfolios'); ?>">Portfólio</a></li>
                 <li><a href="<?php echo base_url('blog'); ?>">Blog</a></li>
                 <li><a href="<?php echo base_url('contato'); ?>">Contato</a></li>
                 <li><a href="<?php echo base_url('shortcodes'); ?>">Shortcodes</a></li>

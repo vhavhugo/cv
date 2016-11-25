@@ -26,17 +26,6 @@
         <link href="<?php echo base_url('assets/css/template.css') ?>" rel="stylesheet">
     </head>
     <body>
-        <!-- Preloader-->
-        <div class="page-loader">
-            <div class="loader">Loading...</div>
-        </div>
-        <!-- Preloader end-->
-        <!-- Show menu-->
-        <div class="show-menu-btn">
-			<span></span>
-			<span></span>
-			<span></span>
-        </div>
         <!-- Show menu end-->
         <?php $this->load->view('header'); ?>
         <!-- Menu end-->
@@ -68,25 +57,7 @@
                 </section>
                 <!-- Hello text end-->
                 <!-- Personal info-->
-                <section class="module">
-                    <div class="container-fluid container-custom">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <h6>Personal Info.</h6>
-                            </div>
-                            <div class="col-sm-8">
-                                <ul>
-                                    <li>Name: Robert Fields</li>
-                                    <li>Birthdate: September 28, 1990</li>
-                                    <li>Address: 122 King St, Melbourne VIC</li>
-                                    <li>Phone: +44 1234 56 78</li>
-                                    <li>E-mail: <a href="#">info@yourdomain.com</a></li>
-                                    <li>Website: <a href="#">mysite.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <?php $this->load->view('pessoal'); ?>
                 <!-- Personal info end-->
                 <!-- Services-->
                 <?php $this->load->view('servicos'); ?>
